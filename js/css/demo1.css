@@ -1,0 +1,81 @@
+#head{
+ 	font-size: 60px;
+ 	margin-left: 50px;
+  margin-bottom: 17px;
+ }
+ #head-ul li{
+  font-size: 15px;
+  margin-top: 7px;
+  margin-right:5px;
+  font-weight: bold;
+ }
+ /*#navv{
+  background: #009FCC;
+ }*/
+ .list-group{
+      position:fixed;
+      z-index:999;
+      width: 80px;
+    }
+ #map1{
+  /*width:959.25px;*/
+  width: 100%;
+  height:510px;
+  position: relative;
+  /*z-index: -1;*/
+ }
+ #point{
+  cursor: pointer;
+ }
+ #line{
+  cursor: pointer;
+ }
+ #polygon{
+  cursor: pointer;
+ }
+ #Distance{
+  cursor: pointer;
+ }
+ #Area{
+  cursor: pointer;
+ }
+ #switching{
+  cursor: pointer;
+ }
+ #drag{
+  cursor: pointer;
+ }
+
+ .wave-box {
+    position: relative;
+    height: 60px;
+    background: #fff;
+    margin-top: 30px;
+}
+.marquee-box {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.marquee {
+    width: 8000%;
+    height: 60px;
+}
+.wave-list-box {
+    float: left;
+}
+.wave-list-box ul {
+    float: left;
+    height: 60px;
+    overflow: hidden;
+    zoom: 1;
+}
+.wave-list-box ul li {
+    height: 60px;
+    width: 100%;
+    float: left;
+    line-height: 30px;
+    list-style: none;
+}
