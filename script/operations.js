@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 "use strict";
-import * as L from "dist/leaflet/include-leaflet.js";
-import "js/node_modules/leaflet.marker.highlight/index.js";
+/* import * as L from "../dist/leaflet/include-leaflet.js";
+import "../js/node_modules/leaflet.marker.highlight/index.js"; */
 
 let map;
 let url = "http://localhost:8090/iserver/services/map-Campus/rest/maps/Campus";
@@ -9,10 +9,10 @@ let urlOSMap =
   "http://localhost:8090/iserver/services/map-OSM/rest/maps/humanitarian";
 let urldata = "http://localhost:8090/iserver/services/data-Campus/rest/data";
 
-export function onPageLoad() {
+function onPageLoad() {
   map = L.map("map", {
     center: [32.11, 118.9],
-    zoom: 6,
+    zoom: 15,
     crs: L.CRS.EPSG4326,
   });
   L.supermap.tiledMapLayer(urlOSMap).addTo(map);
@@ -20,32 +20,32 @@ export function onPageLoad() {
 }
 
 // 全图显示
-export function Fullwidth() {
+function Fullwidth() {
   let latlng = L.latLng(32.11, 118.9);
   map.setView(latlng, 14);
 }
 
 // 放大
-export function enlarge() {
+function enlarge() {
   map.zoomIn(2);
 }
 
-export function narrow() {
+function narrow() {
   map.zoomOut(2);
 }
 
 // 平移
-export function translation() {
+function translation() {
   map.panTo([32.11, 118.91]);
 }
 
 // 清除
-export function clearr() {
+function clearr() {
   map.removeLayer();
 }
 
 // 距离量算
-export function distance() {
+function distance() {
   let handler = new L.Draw.Polyline(map);
   handler.enable();
   map.on(L.Draw.Event.CREATED, function (e) {
@@ -63,7 +63,7 @@ export function distance() {
 }
 
 // 面积量算
-export function measure() {
+function measure() {
   let handler = new L.Draw.Polygon(map);
   handler.enable();
   map.on(L.Draw.Event.CREATED, function (e) {
@@ -81,7 +81,7 @@ export function measure() {
 }
 
 // 右上角全局搜索
-export function globalsearch() {
+function globalsearch() {
   let k = $("#quanju").val().toString();
   if (k === "") {
     window.alert("请输入信息后再做查询！");
@@ -103,4 +103,4 @@ export function globalsearch() {
 
 // 公共设施查询
 
-export function globalsearch1() {}
+function globalsearch1() {}
