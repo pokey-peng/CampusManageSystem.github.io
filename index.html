@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="js/node_modules/leaflet.marker.highlight/index.css"
     />
+    <link rel="stylesheet" href="css/CampusManage.css" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/bs/js/bootstrap.js"></script>
     <script
@@ -16,159 +17,23 @@
       src="dist/leaflet/include-leaflet.js"
     ></script>
     <script src="js/node_modules/leaflet.marker.highlight/index.js"></script>
-    
+    <script src="script/vue.js"></script>
   </head>
   <style>
     font-family 微软雅黑 * {
       margin: 0;
       padding: 0;
     }
-    #theul li {
-      list-style: none;
-      float: left;
-      margin-left: 20px;
-      height: 195px;
-      z-index: 200000;
-    }
-    ol,
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-    #anniu button {
-      width: 100px;
-      height: 40px;
-    }
-    #btn {
-      width: 40px;
-      margin-top: 270px;
-      left: 350px;
-      height: 140px;
-      border: 0;
-      border-left: 1px solid rgb(23, 32, 43, 0.2);
-      background: #f8f8f8;
-      color: #000;
-      cursor: pointer;
-      margin-left: -3px;
-    }
-    .box {
-      float: left;
-      position: relative;
-      left: 0;
-      height: 81.5%;
-      width: 19%;
-      margin-left: 0;
-      display: block;
-      transition: margin-left 2s;
-      z-index: 100;
-      min-height: 682px;
-    }
-    #maindiv {
-      width: 100%;
-      height: 78%;
-      background: #f8f8f8;
-      margin: 0;
-      padding: 0;
-      min-width: 1770px;
-    }
-    #myul li {
-      list-style: none;
-    }
-    #myul a {
-      text-decoration: none;
-    }
-    #myull li {
-      list-style: none;
-    }
-    #myulll li {
-      list-style: none;
-    }
-    #myullll li {
-      list-style: none;
-    }
-    #anniu button:hover {
-      background-color: rgba(140, 171, 110, 0.3);
-    }
-    #myul li:hover {
-      background: #8cab6e;
-      cursor: pointer;
-    }
-    #myull li:hover {
-      background: #8cab6e;
-      cursor: pointer;
-    }
-    #myulll li:hover {
-      background: #8cab6e;
-      cursor: pointer;
-    }
-    #myullll li:hover {
-      background: #8cab6e;
-      cursor: pointer;
-    }
-    #biao li {
-      list-style: none;
-    }
-    #biao tr:not(:first-child):hover {
-      background: #8cab6e;
-      cursor: pointer;
-    }
-    #biao {
-      font-weight: bold;
-    }
-    #mytable li {
-      text-align: center;
-      list-style: none;
-      height: 30px;
-      line-height: 30px;
-      font-weight: bold;
-    }
-    #build li {
-      list-style: none;
-      font-size: 17px;
-      font-weight: bold;
-    }
-    #build li:hover {
-      background: #8cab6e;
-      cursor: pointer;
-    }
-    #build span {
-      color: #3c763d;
-    }
-    #build a {
-      color: #3c763d;
-      text-decoration: none;
-    }
-    #quanju::-webkit-input-placeholder {
-      color: #ffffff;
-      opacity: 0.7;
-    }
-    #xialai li:hover {
-      cursor: pointer;
-    }
-    #xialai2 li:hover {
-      cursor: pointer;
-    }
-    .dropdown-menu > li > a:hover {
-      background: #337ab7;
-      color: #fff;
-    }
-    body {
-      height: 100%;
-      position: absolute;
-      width: 100%;
-      overflow: auto;
-    }
   </style>
   <body onload="onPageLoad()">
     <div
+      id="appHeader"
       style="
         width: 100%;
         height: 18.5%;
-        background: #8cab6e;
-        background-image: url('img/head_background.jpg');
         background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
+        background: #8cab6e url('img/head_background.jpg') no-repeat center
+          center;
         position: relative;
         min-width: 1770px;
         min-height: 154px;
@@ -231,6 +96,7 @@
           </div>
         </li>
       </ul>
+      {{message}}
     </div>
     <aside class="box" id="test">
       <div
@@ -239,7 +105,7 @@
           height: 100%;
           background: #f8f8f8;
           position: absolute;
-          box-shadow: 2px 0px 22px 3px rgba(115, 115, 115, 0.2);
+          box-shadow: 2px 0 22px 3px rgba(115, 115, 115, 0.2);
         "
       >
         <div
@@ -389,6 +255,7 @@
                     width: 30px;
                     height: 30px;
                   "
+                  alt=""
                 />
                 <a
                   class="collapsed"
@@ -1014,9 +881,17 @@
     <!-- 底部 -->
   </body>
   <!--yinru
-  <script src="js/FindPath.js"></script>
-  <script src="js/Facility_Query.js"></script>
-  <script src="js/Streetlamp_Management.js"></script>
-  -->
+<script src="js/FindPath.js"></script>
+<script src="js/Facility_Query.js"></script>
+<script src="js/Streetlamp_Management.js"></script>
+-->
   <script src="script/operations.js"></script>
+  <script type="text/javascript">
+    let app = new Vue({
+      el: "#appHeader",
+      data: {
+        message: "Hello Vue!",
+      },
+    });
+  </script>
 </html>
