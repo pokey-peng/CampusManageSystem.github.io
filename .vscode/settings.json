@@ -1,4 +1,8 @@
 {
   "workbench.colorTheme": "One Dark Pro",
-  "workbench.preferredDarkColorTheme": "One Dark Pro"
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "workbench.iconTheme": "vscode-icons"
 }

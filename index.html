@@ -18,6 +18,7 @@
     ></script>
     <script src="js/node_modules/leaflet.marker.highlight/index.js"></script>
     <script src="script/vue.js"></script>
+
   </head>
   <style>
     font-family 微软雅黑 * {
@@ -879,19 +880,18 @@
       >
     </div>
     <!-- 底部 -->
+    <script src="script/operations.js"></script>
+    <script type="text/javascript">
+      let app = new Vue({
+        el: "#appHeader",
+        data: {
+          message: "Hello Vue!",
+        },
+      });
+    </script>
   </body>
   <!--yinru
 <script src="js/FindPath.js"></script>
 <script src="js/Facility_Query.js"></script>
 <script src="js/Streetlamp_Management.js"></script>
--->
-  <script src="script/operations.js"></script>
-  <script type="text/javascript">
-    let app = new Vue({
-      el: "#appHeader",
-      data: {
-        message: "Hello Vue!",
-      },
-    });
-  </script>
-</html>
+--></html>

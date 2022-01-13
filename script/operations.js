@@ -9,7 +9,7 @@ let urlOSMap =
   "http://localhost:8090/iserver/services/map-OSM/rest/maps/humanitarian";
 let urldata = "http://localhost:8090/iserver/services/data-Campus/rest/data";
 
-function onPageLoad() {
+export function onPageLoad() {
   map = L.map("map", {
     center: [32.11, 118.9],
     zoom: 6,
@@ -20,32 +20,32 @@ function onPageLoad() {
 }
 
 // 全图显示
-function Fullwidth() {
+export function Fullwidth() {
   let latlng = L.latLng(32.11, 118.9);
   map.setView(latlng, 14);
 }
 
 // 放大
-function enlarge() {
+export function enlarge() {
   map.zoomIn(2);
 }
 
-function narrow() {
+export function narrow() {
   map.zoomOut(2);
 }
 
 // 平移
-function translation() {
+export function translation() {
   map.panTo([32.11, 118.91]);
 }
 
 // 清除
-function clearr() {
+export function clearr() {
   map.removeLayer();
 }
 
 // 距离量算
-function distance() {
+export function distance() {
   let handler = new L.Draw.Polyline(map);
   handler.enable();
   map.on(L.Draw.Event.CREATED, function (e) {
@@ -63,7 +63,7 @@ function distance() {
 }
 
 // 面积量算
-function measure() {
+export function measure() {
   let handler = new L.Draw.Polygon(map);
   handler.enable();
   map.on(L.Draw.Event.CREATED, function (e) {
@@ -81,7 +81,7 @@ function measure() {
 }
 
 // 右上角全局搜索
-function globalsearch() {
+export function globalsearch() {
   let k = $("#quanju").val().toString();
   if (k === "") {
     window.alert("请输入信息后再做查询！");
@@ -103,4 +103,4 @@ function globalsearch() {
 
 // 公共设施查询
 
-function globalsearch1() {}
+export function globalsearch1() {}
