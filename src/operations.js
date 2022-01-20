@@ -1,7 +1,5 @@
 /* jshint esversion: 6 */
-"use strict";
-/* import * as L from "../dist/leaflet/include-leaflet.js";
-import "../js/node_modules/leaflet.marker.highlight/index.js"; */
+/*import "../js/node_modules/leaflet.marker.highlight/index.js"; */
 
 let map;
 let url = "http://localhost:8090/iserver/services/map-Campus/rest/maps/Campus";
