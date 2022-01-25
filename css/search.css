@@ -1,0 +1,35 @@
+#search-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: calc(100vh - 128px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+
+.suggestion {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  margin: -1px;
+  min-height: 64px;
+  -webkit-box-align: center;
+  align-items: center;
+  border-bottom: 1px solid #e9eaed;
+  display: flex;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #ff4081;
+}
+
+.results {
+  box-sizing: border-box;
+}
+
+[class="suggestions shadow"] {
+  box-sizing: border-box;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

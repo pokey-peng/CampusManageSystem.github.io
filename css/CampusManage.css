@@ -1,9 +1,94 @@
+#theul {
+  z-index: 200000;
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+}
+.tooldiv {
+  margin-top: 146px;
+  text-align: center;
+  font-size: 22px;
+  color: #ffffff;
+  cursor: pointer;
+  padding-bottom: 9px;
+  padding-top: 9px;
+}
 #theul li {
   list-style: none;
   float: left;
   margin-left: 20px;
   height: 195px;
+  width: 225px;
   z-index: 200000;
+}
+
+#theul li > :first-child:hover {
+  background: #799b59;
+}
+
+#theul li:last-child:hover {
+  background: #8cab6e;
+}
+
+#theul li:last-child > :first-child:hover {
+  background: #8cab6e;
+}
+
+#search-div {
+  width: 225px;
+  height: 30px;
+  margin-top: 155px;
+  color: #fff3ee;
+}
+
+.input-group {
+  width: 220px;
+  margin-top: 15.8px;
+}
+
+#quanju {
+  background: #799b59;
+  border-radius: 25px;
+  color: #ffffff;
+}
+
+#query-input {
+  background: #eff5e9;
+  border-radius: 25px;
+  color: hsl(0, 7%, 5%);
+}
+
+#search-btn {
+  width: 40px;
+  height: 34px;
+  position: absolute;
+  z-index: 1000000;
+  margin-left: 180px;
+  border-radius: 25px;
+}
+
+.search-submit {
+  border-radius: 25px;
+  background-color: #799b59;
+  width: 35px;
+  height: 28px;
+  background-image: url("../img/搜索框.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: none;
+  margin-top: 4px;
+}
+
+#search-btn button {
+  border-radius: 25px;
+  background-color: #799b59;
+  width: 35px;
+  height: 28px;
+  background-image: url("../img/搜索框.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: none;
+  margin-top: 4px;
 }
 
 ol,
@@ -16,18 +101,58 @@ ul {
   width: 100px;
   height: 40px;
 }
+#map {
+  background: #f8f8f8;
+  width: 81%;
+  height: 100%;
+  position: sticky;
+  top: 0px;
+  min-height: 664px;
+  z-index: 30;
+}
+
+#light {
+  width: 450px;
+  height: 300px;
+  position: absolute;
+  margin-top: 472px;
+  z-index: 200000;
+  display: none;
+  margin-left: 20px;
+}
+#biao {
+  width: 100%;
+  display: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#biao > div {
+  overflow: auto;
+  width: 100%;
+  margin-left: 0px;
+  height: 100%;
+}
 
 #btn {
-  width: 40px;
   margin-top: 270px;
   left: 350px;
-  height: 140px;
   border: 0;
   border-left: 1px solid rgb(23, 32, 43, 0.2);
   background: #f8f8f8;
   color: #000;
   cursor: pointer;
-  margin-left: -3px;
+  background-image: url("../img/花标.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: none;
+  outline: none;
+  width: 38px;
+  height: 160px;
+  z-index: 20000;
+  position: absolute;
+  margin-left: -32px;
 }
 
 .box {
@@ -41,6 +166,14 @@ ul {
   transition: margin-left 2s;
   z-index: 100;
   min-height: 682px;
+}
+
+#right-editor {
+  float: right;
+  position: fixed;
+  overflow: hidden;
+  margin-left: 70%;
+  width: 30%;
 }
 
 #maindiv {
@@ -150,6 +283,27 @@ ul {
   cursor: pointer;
 }
 
+#thebuild li:hover {
+  background: #8cab6e;
+  cursor: pointer;
+}
+
+#thebuild li {
+  list-style: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#thebuild li:hover {
+  background: #8cab6e;
+  cursor: pointer;
+}
+
+#thebuild a {
+  color: #3c763d;
+  text-decoration: none;
+}
+
 .dropdown-menu > li > a:hover {
   background: #337ab7;
   color: #fff;
@@ -160,4 +314,20 @@ body {
   position: absolute;
   width: 100%;
   overflow: auto;
+}
+#app {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+}
+
+#appHeader {
+  width: 100%;
+  height: 18.5%;
+  background-size: cover;
+  background: #8cab6e url("../img/head_background.jpg") no-repeat center center;
+  position: relative;
+  min-width: 1770px;
+  min-height: 154px;
 }

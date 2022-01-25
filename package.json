@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "geocolor": "^0.0.16",
+    "json-beautify": "^1.1.1"
+  },
+  "webPreferences": {
+    "nodeIntegration": true,
+    "contextIsolation": false
+  }
+}
