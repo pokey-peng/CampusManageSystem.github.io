@@ -2,7 +2,8 @@
 /*import "../js/node_modules/leaflet.marker.highlight/index.js"; */
 
 var map;
-var url = "http://localhost:8090/iserver/services/map-Campus/rest/maps/Campus";
+//var url = "http://localhost:8090/iserver/services/map-Campus/rest/maps/Campus";
+var url = "http://192.168.101.73:8090/iserver/services/map-Campus/rest/maps/Campus";
 var urlOSMap =
   "http://localhost:8090/iserver/services/map-OSM/rest/maps/normal";
 var urlTDTImage =
@@ -12,6 +13,8 @@ var urlTDTVector =
 var urldata = "http://localhost:8090/iserver/services/data-Campus/rest/data";
 var urlOsmChinaData =
   "http://localhost:8090/iserver/services/data-shapefile-chinashp/rest/data";
+var urlGrayMap =
+  "http://localhost:8090/iserver/services/map-world/rest/maps/%E4%B8%96%E7%95%8C%E5%9C%B0%E5%9B%BE_Gray";
 var editableLayers = new L.FeatureGroup();
 var searchResultLayer;
 var isCampus = true;
@@ -71,8 +74,8 @@ function onPageLoad() {
     // var osmGeocoder = new L.Control.OSMGeocoder();
     // map.addControl(osmGeocoder);
     changeAttributes();
-    switchComponent = L.control
-      .layers.tree(baseMaps, {}, { position: "topleft" })
+    switchComponent = L.control.layers
+      .tree(baseMaps, {}, { position: "topleft" })
       .addTo(map);
   }
 }

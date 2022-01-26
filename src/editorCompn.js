@@ -7,11 +7,12 @@ editor = CodeMirror.fromTextArea(document.getElementById("code-e"), {
   foldGutter: true,
   gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
   matchBrackets: true, //括号匹配
+  styleActiveLine: true,
 });
 editor.setSize("100%", "90%");
-editor.on("change", function (editorIns, changeObj) {
-  extractProperties(activeGeojson);
-});
+// editor.on("change", function (editorIns, changeObj) {
+//   extractProperties(activeGeojson);
+// });
 
 Vue.component("table-attribute", {
   data: function () {
@@ -22,7 +23,7 @@ Vue.component("table-attribute", {
   template: `
   <div id="attr-table" v-if="featuresmy.dictionary.length">
   <table class="table table-bordered">
-    <thead style="width: 97%;">
+    <thead style="width: calc(100% - 1em);">
       <tr>
         <th v-for="(value,index) in featuresmy.dictionary" :key=index>{{value}}</th>
       </tr>
@@ -123,12 +124,57 @@ function downloadOsmData() {
   let codedown = js_beautify(JSON.stringify(downGeoJson));
   const a = document.createElement("a");
   a.href =
-    "data:application/json;charset=utf-8,\ufeff" +
-    encodeURIComponent(codedown);
+    "data:application/json;charset=utf-8,\ufeff" + encodeURIComponent(codedown);
   if (areaName === undefined) {
     areaName = "NoName";
   }
   a.download = areaName;
   a.click();
-
 }
+
+function downloadActiveLayer() {
+  let geojsonCode = editor.getValue();
+  const a = document.createElement("a");
+  a.href =
+    "data:application/json;charset=utf-8,\ufeff" +
+    encodeURIComponent(geojsonCode);
+  if (activeName === undefined) {
+    activeName = "NoName";
+  }
+  a.download = activeName;
+  a.click();
+}
+
+function setSwitchLayer(geojson) {
+  let layer = L.geoJSON(geojson, {
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(feature.properties.name);
+    },
+    style: function (feature) {
+      return { color: "red" };
+    },
+  });
+  osmResultLayer[activeName].clearLayers();
+  osmResultLayer[activeName].addLayer(layer);
+  //switchComponent.setOverlayTree(overlayers);
+}
+$("#apply-geo").on("click", function (e) {
+  let geojson = JSON.parse(editor.getValue());
+  extractProperties(geojson);
+  setSwitchLayer(geojson);
+});
+$("#save-geo").on("click", function (e) {
+  code = editor.getValue();
+  let geojson = JSON.parse(code);
+  extractProperties(geojson);
+  osmAllLayers["gis_osm_" + activeName + "_free_1"] = geojson;
+  rootVueapp.$children[0].getosmlayers[activeName] = geojson;
+  setSwitchLayer(geojson);
+});
+
+$("#cancel-geo").on("click", function (e) {
+  let geojson = osmAllLayers["gis_osm_" + activeName + "_free_1"];
+  editor.setValue(code);
+  extractProperties(geojson);
+  setSwitchLayer(geojson);
+});

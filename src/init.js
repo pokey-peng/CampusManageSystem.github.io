@@ -46,11 +46,11 @@ var osmAllLayers = {
   gis_osm_places_a_free_1: places_a,
   gis_osm_transport_a_free_1: transport_a,
   gis_osm_waterways_free_1: waterways,
-  // gis_osm_pois_a_free_1: pois_a,
   gis_osm_traffic_a_free_1: traffic_a,
 };
 var getosmlayers = {};
 var activeGeojson;
+var activeName;
 var code;
 var actfeatures = {
     dictionary: [], //属性字段列表

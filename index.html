@@ -23,8 +23,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="plugin/addon/fold/foldgutter.css"/>
-    <link rel="stylesheet" href="plugin/L.Control.Layers.Tree.css">
+    <link rel="stylesheet" href="plugin/addon/fold/foldgutter.css" />
+    <link rel="stylesheet" href="plugin/L.Control.Layers.Tree.css" />
     <link rel="shortcut icon" href="img/icons/njnu.svg" type="image/x-icon" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/bs/js/bootstrap.js"></script>
@@ -49,7 +49,6 @@
     ></script>
     <script src="src/vue.js"></script>
 
-
     <script src="plugin/addon/fold/foldcode.js"></script>
     <script src="plugin/addon/fold/foldgutter.js"></script>
     <script src="plugin/addon/fold/brace-fold.js"></script>
@@ -63,7 +62,6 @@
     }
   </style>
   <body onload="onPageLoad()">
-
     <div id="app">
       <div id="appHeader">
         <ul id="theul">
@@ -746,6 +744,15 @@
                     style="height: 30px"
                     id="osmbuildingsclick"
                   >
+                    <img
+                      src="img/数据下载.jpg"
+                      style="
+                        margin-left: 20px;
+                        float: left;
+                        width: 30px;
+                        height: 30px;
+                      "
+                    />
                     <a
                       class="collapsed"
                       style="
@@ -778,6 +785,13 @@
                       </button>
                       <button
                         type="button"
+                        class="btn btn-warning"
+                        onclick="downloadActiveLayer()"
+                      >
+                        下载当前图层
+                      </button>
+                      <button
+                        type="button"
                         class="btn btn-success"
                         onclick="downloadOsmData()"
                       >
@@ -800,6 +814,15 @@
                     style="height: 30px"
                     id="osmbuildingsclick"
                   >
+                    <img
+                      src="img/3D建筑效果.jpg"
+                      style="
+                        margin-left: 20px;
+                        float: left;
+                        width: 30px;
+                        height: 30px;
+                      "
+                    />
                     <a
                       class="collapsed"
                       style="
@@ -871,6 +894,15 @@
                     style="height: 30px"
                     id="osmlayerclick"
                   >
+                    <img
+                      src="img/编辑.jpg"
+                      style="
+                        margin-left: 20px;
+                        float: left;
+                        width: 30px;
+                        height: 30px;
+                      "
+                    />
                     <a
                       class="collapsed"
                       style="
@@ -985,6 +1017,19 @@
               <div id="editor-container">
                 <textarea class="editor-control" id="code-e" name="code-e">
                 </textarea>
+                <div class="form-group">
+                  <div class="btn-group" role="group" aria-label="..." style="margin-left: 0;">
+                    <button class="btn btn-warning" type="button" id="apply-geo">
+                      应用
+                    </button>
+                    <button class="btn btn-primary" type="button" id="save-geo">
+                      保存
+                    </button>
+                    <button class="btn btn-white" type="button" id="cancel-geo">
+                      取消
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="profile">

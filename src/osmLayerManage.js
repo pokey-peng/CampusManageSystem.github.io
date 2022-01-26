@@ -40,7 +40,7 @@ Vue.component("layer-list", {
   <div class="layer-manage" v-if="loadLayer && getosmlayers">
     <ul id="layerlist-container">
       <li class="layer-li" v-for='(value, index) in getosmlayers' :key="index" style="margin-left: -1px;height: auto;">
-        <a @click.prevent="setCode(value)" class="layer-name" href="#">
+        <a @click.prevent="setCode(value,index)" class="layer-name" href="#">
           <span class="layer-text">{{index}}</span>
         </a>
       </li>
@@ -54,10 +54,12 @@ Vue.component("layer-list", {
     });
   },
   methods: {
-    setCode(value) {
-      code = JSON.stringify(value);
+    setCode(value,index) {
+      code = js_beautify(JSON.stringify(value));
+      activeName = index;
       activeGeojson = JSON.parse(code);
-      editor.setValue(js_beautify(code));
+      editor.setValue(code);
+      extractProperties(activeGeojson);
     },
   },
 });

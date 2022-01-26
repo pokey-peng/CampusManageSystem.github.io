@@ -44,9 +44,6 @@ function setBuildings() {
     let geojson = osmAllLayers[key];
     if (!$.isEmptyObject(geojson)) {
       if (key === "gis_osm_buildings_a_free_1") {
-        // if (osmBuildingRe !== undefined) {
-        //   osmBuildingRe.remove();
-        // }
         osmBuildingRe = new OSMBuildings(map)
           .date(new Date(2017, 5, 15, 17, 30))
           .set(geojson);
@@ -79,4 +76,5 @@ function setBuildings() {
   dateRange.addEventListener("input", onDateChange);
 }
 
+//TODO 风格设置 地图样式 制图
 function styleFunction(feature) {}
