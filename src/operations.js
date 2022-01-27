@@ -2,8 +2,8 @@
 /*import "../js/node_modules/leaflet.marker.highlight/index.js"; */
 
 var map;
-//var url = "http://localhost:8090/iserver/services/map-Campus/rest/maps/Campus";
-var url = "http://192.168.101.73:8090/iserver/services/map-Campus/rest/maps/Campus";
+var url = "http://localhost:8090/iserver/services/map-Campus/rest/maps/Campus";
+//var url = "http://192.168.101.73:8090/iserver/services/map-Campus/rest/maps/Campus";
 var urlOSMap =
   "http://localhost:8090/iserver/services/map-OSM/rest/maps/normal";
 var urlTDTImage =
